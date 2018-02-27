@@ -1,0 +1,127 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f1f1f1;
+}
+
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Bars */
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+}
+
+
+/* Style the topnav links */
+.topnav a {
+    float: none;
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Products Section */
+
+.container {
+    text-align: center;
+    padding: 26px;
+}
+
+.category {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: #f1f1f1;
+    margin-top: 20px;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Heading & Paragraph */
+
+.heading1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.p1 {
+    text-indent: 50px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #008CBA;
+}
+
+/* Login & Register Form */
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
