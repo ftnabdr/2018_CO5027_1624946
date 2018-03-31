@@ -10,4 +10,6 @@
     <p class ="p1">This text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties.</p>
     <p class ="p1">The paragraph is indented, aligned, and the space between characters is specified. The underline is removed from this colored.</p>
 </asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="googleMap" Runat="Server">
+</asp:Content>
 

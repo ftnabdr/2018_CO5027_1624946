@@ -11,7 +11,6 @@
     <link href="css/Styles.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
         <div class="header">
             <h1>Classic Art Paintings</h1>
             <p>Resize the browser window to see the responsive effect.</p>
@@ -28,7 +27,9 @@
         <asp:ContentPlaceHolder id="contentBody" runat="server">
         
         </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder id="googleMap" runat="server">
+        
+        </asp:ContentPlaceHolder>
     </div>
-    </form>
 </body>
 </html>

@@ -35,4 +35,6 @@
         </div>
      </div>
 </asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="googleMap" Runat="Server">
+</asp:Content>
 

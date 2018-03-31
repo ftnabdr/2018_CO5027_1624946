@@ -2,9 +2,16 @@
     box-sizing: border-box;
 }
 
+.page_wrap {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body {
     margin: 0;
     background-color: #f1f1f1;
+    height: 100%;
 }
 
 /* Style the header */
@@ -31,7 +38,6 @@ body {
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
-    text-align: center;
     text-decoration: none;
 }
 
@@ -71,7 +77,7 @@ h2 {
     text-align: center;
 }
 
-.p1 {
+p {
     text-indent: 50px;
     letter-spacing: 3px;
     text-align: center;
@@ -85,7 +91,6 @@ a {
 /* Login & Register Form */
 
 input[type=text], input[type=password] {
-    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -119,6 +124,13 @@ span.psw {
     height: 300px; /* Should be removed. Only for demonstration */
 }
 
+.column1 {
+    float: right;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+}
+
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -126,4 +138,50 @@ span.psw {
     clear: both;
 }
 
+
+/* Message Form*/
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #f1f1f1;
+}
+
+/*Map*/
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+    height: 350px;
+    width: 100%;
+}
+
+/*Register Form*/
+
+.container1 {
+    height: 300px;
+    width: 300px;
+    background: #f2f2f2;
+    margin: 10px auto;
+    position: relative;
+    text-align: center;
+}
 

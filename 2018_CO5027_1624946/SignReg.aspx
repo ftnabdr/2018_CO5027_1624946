@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" Runat="Server">
+    <form id="form1" runat="server">
     <div class="row">
 
         <div class="column">
@@ -13,24 +14,19 @@
             <div class="container">
 
                     <h2>Login</h2>
+                <br />
+                <br />
+                    <asp:Label ID="Label1" runat="server" Text="Username"></asp:Label>
+                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
 
-         <br />
-         <br />
-
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
-
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-         <br />
-         <br />
-         <br />
-         <br />
-         <br />
-                    <button type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
+                    <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                    <asp:Button ID="Button1" runat="server" Text="Login" />
                     
                 </div>
             </div>
@@ -45,22 +41,23 @@
   
                 <p>Please fill in this form to create an account.</p>
 
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <asp:Label ID="Label3" runat="server" Text="Username"></asp:Label>
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <asp:Label ID="Label4" runat="server" Text="Password"></asp:Label>
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
 
-                <label for="psw-repeat"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                         
+                <asp:Label ID="Label5" runat="server" Text="Repeat Password"></asp:Label>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                <asp:Button ID="Button2" runat="server" Text="Submit" />
 
-            <div class="clearfix">
-                <button type="submit" class="signupbtn">Sign Up</button>
-            </div>
-                     <label><input type="checkbox" checked="checked" name="remember">Remember me</label>
                          
             </div>
        </div>
     </div>
+    </form>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="googleMap" Runat="Server">
 </asp:Content>
 
