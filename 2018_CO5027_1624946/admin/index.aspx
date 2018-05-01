@@ -6,8 +6,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" Runat="Server">
-    Default Page
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="googleMap" Runat="Server">
+    <h2>Default Page</h2>
+
+    <a href="List.aspx">List of Products</a>
+    <br />
+    <a href="Add.aspx">Add Products</a>
+    <br />
+
 </asp:Content>
 

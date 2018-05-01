@@ -22,7 +22,7 @@ public partial class Register : System.Web.UI.Page
         var userStore = new UserStore<IdentityUser>(identityDBContext);
         var manager = new UserManager<IdentityUser>(userStore);
 
-        IdentityRole adminRole = new IdentityRole("Admin");
+        IdentityRole adminRole = new IdentityRole("RegisteredUser");
         roleManager.Create(adminRole);
         var user = new IdentityUser()
         {
@@ -33,7 +33,7 @@ public partial class Register : System.Web.UI.Page
         IdentityResult result = manager.Create(user, txtRegPassword.Text);
         if (result.Succeeded)
         {
-            manager.AddToRole(user.Id, "Admin");
+            manager.AddToRole(user.Id, "RegisteredUser");
             manager.Update(user);
             litRegisterError.Text = "Registration Successful";
         }

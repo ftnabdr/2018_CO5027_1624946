@@ -7,27 +7,27 @@
 <head runat="server">
     <title><asp:contentplaceholder ID="title" runat="server"></asp:contentplaceholder></title>
     <asp:ContentPlaceHolder id="head" runat="server">
+
     </asp:ContentPlaceHolder>
     <link href="css/Styles.css" rel="stylesheet" />
 </head>
 <body>
         <div class="header">
-            <h1>Classic Art Paintings</h1>
-            <p>Resize the browser window to see the responsive effect.</p>
-        </div>
 
         <div class="topnav">
             <a href="Default.aspx">Home</a>
-            <a href="Products.aspx">Product</a>
-            <a href="About.aspx">About</a>
+            <a href="Product.aspx">Product</a>
             <a href="Contact.aspx">Contact Us</a>
-            <a href="SignReg.aspx">Sign in / Register</a>
+            <a href="SignReg.aspx">Login</a>
+            <a href="Checkout.aspx"><img src="ProductImages/cart.png" width="20"></a>
         </div>
+
+            <h1>Classic Art Paintings</h1>
+            <p class="a">"A picture is a poem without words - Horace"</p>
+        </div>
+       
     <div>
         <asp:ContentPlaceHolder id="contentBody" runat="server">
-        
-        </asp:ContentPlaceHolder>
-        <asp:ContentPlaceHolder id="googleMap" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>

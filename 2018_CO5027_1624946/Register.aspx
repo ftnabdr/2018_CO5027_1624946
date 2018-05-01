@@ -15,7 +15,10 @@
                 <p>Please fill in this form to create an account.</p> 
 
                 <asp:Label ID="lblRegEmail" runat="server" Text="Email:"></asp:Label>
+                <br />
                 <asp:TextBox ID="txtRegEmail" runat="server"></asp:TextBox>
+
+                <br />
 
                 <asp:Label ID="lblRegPassword" runat="server" Text="Password:"></asp:Label>
                 <br />     
@@ -34,7 +37,5 @@
 
 </div> 
 </form>
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="googleMap" Runat="Server">
 </asp:Content>
 

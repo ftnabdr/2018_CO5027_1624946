@@ -37,5 +37,22 @@ public partial class Login : System.Web.UI.Page
             user, DefaultAuthenticationTypes.ApplicationCookie);
         authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
 
-}
+        if (Request.QueryString["~/register.aspx"] != null)
+        {
+            Response.Redirect(Request.QueryString["~/register.aspx"]);
+        }
+
+        else
+        {
+            string UserRoles = usermanager.GetRoles(user.Id).FirstOrDefault();
+            if (UserRoles.Equals("Admin"))
+            {
+                if (UserRoles.Equals("Admin"))
+                {
+                    Response.Redirect("~/admin/index.aspx");
+                }
+            }
+        }
+
+    }
 }
