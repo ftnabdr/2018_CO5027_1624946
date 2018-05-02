@@ -39,9 +39,9 @@ public partial class SignReg : System.Web.UI.Page
             user, DefaultAuthenticationTypes.ApplicationCookie);
         authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
 
-        if (Request.QueryString["~/register.aspx"] != null)
+        if (Request.QueryString["~/SignReg.aspx"] != null)
         {
-            Response.Redirect(Request.QueryString["~/register.aspx"]);
+            Response.Redirect(Request.QueryString["~/Product.aspx"]);
         }
 
         else

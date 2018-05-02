@@ -12,7 +12,7 @@ public partial class admin_UploadImage : System.Web.UI.Page
         string ProductID = Request.QueryString["ProductID"];
         string filename = ProductID + ".jpg";
 
-        currentImage.ImageUrl = "~/ProductImages/" + filename;
+        currentImage.ImageUrl = "~/Images/" + filename;
 
     }
 
@@ -21,8 +21,10 @@ public partial class admin_UploadImage : System.Web.UI.Page
         string ProductID = Request.QueryString["ProductID"];
 
         string filename = ProductID + ".jpg";
-        string saveLocation = Server.MapPath("~/ProductImages/" + filename);
+        string saveLocation = Server.MapPath("~/Images/" + filename);
 
         imageFileUploadControl.SaveAs(saveLocation);
+
+        imgLit.Text = "<p>Your File was uploaded as " + filename + " in the Images folder</p>";
     }
 }

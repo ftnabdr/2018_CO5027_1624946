@@ -21,51 +21,73 @@ public partial class Product : System.Web.UI.Page
         decimal subTotal = (quantityofProduct * productPrice);
         decimal total = subTotal + postagePackagingCost;
 
-        var config = ConfigManager.Instance.GetProperties();
-        var accessToken = new OAuthTokenCredential(config).GetAccessToken();
+        //var configure = ConfigManager.Instance.GetProperties();
+        //var accessToken = new OAuthTokenCredential(configure).GetAccessToken();
+        //var apiContext = new APIContext(accessToken);
+
+        var clientId = "AdSDcRXnR9Tt9V4cKRuwIGgmt0nHe2m4u1zW8KtyEtJSbuJ2esa_pwK5fHVIlDdmnQ5dACdOWuYh89_M";
+        var clientSecret = "ED4P5ejAOwBhpuyq17d7_unOnDJawudQEQBJxDxZCi4_Ydg3JoBJcsuB_gF4xfTQd5Mm1qToKQ2ODYd8";
+        var sdkConfig = new Dictionary<string, string> {
+            { "mode", "sandbox" },
+            { "clientId", clientId },
+            { "clientSecret", clientSecret }
+
+            };
+
+        var accessToken = new OAuthTokenCredential(clientId, clientSecret, sdkConfig).GetAccessToken();
         var apiContext = new APIContext(accessToken);
+        apiContext.Config = sdkConfig;
 
-        var productItem = new Item();
-        productItem.name = "Product 1";
-        productItem.currency = "BND";
-        productItem.price = productPrice.ToString();
-        productItem.sku = "PRO1";
-        productItem.quantity = quantityofProduct.ToString();
+        var Item = new Item();
+        Item.name = "Product 1";
+        Item.currency = "GBP";
+        Item.price = productPrice.ToString();
+        Item.sku = "Product 1";
+        Item.quantity = quantityofProduct.ToString();
 
-        var transactionDetails = new Details();
-        transactionDetails.tax = "0";
-        transactionDetails.shipping = postagePackagingCost.ToString();
-        transactionDetails.subtotal = subTotal.ToString("0.00");
+        var details = new Details();
+        details.tax = "0";
+        details.shipping = postagePackagingCost.ToString();
+        details.subtotal = subTotal.ToString("0.00");
 
-        var transactionAmount = new Amount();
-        transactionAmount.currency = "BND";
-        transactionAmount.total = total.ToString("0.00");
-        transactionAmount.details = transactionDetails;
+        var amount = new Amount();
+        amount.currency = "GBP";
+        amount.total = total.ToString("0.00");
+        amount.details = details;
 
         var transaction = new Transaction();
-        transaction.description = "Product 1 Description";
-        transaction.invoice_number = Guid.NewGuid().ToString();
-        transaction.amount = transactionAmount;
+        transaction.description = "Your order of the items";
+        transaction.invoice_number = Guid.NewGuid().ToString(); // ID of a record storing the order
+        transaction.amount = amount;
         transaction.item_list = new ItemList
         {
-            items = new List<Item> { productItem }
+            items = new List<Item> { Item }
         };
 
-        var payer = new Payer();
-        payer.payment_method = "paypal";
+        var customer = new Payer();
+        customer.payment_method = "paypal";
 
-        var redirectUrls = new RedirectUrls();
-        redirectUrls.cancel_url = "http://" + HttpContext.Current.Request.Url.Authority + "/Cancel.aspx";
-        redirectUrls.return_url = "http://" + HttpContext.Current.Request.Url.Authority + "/CompletePurchase.aspx";
+        var URL = new RedirectUrls();
+        URL.cancel_url = "http://" + HttpContext.Current.Request.Url.Authority + "/product.aspx";
 
-        var payment = Payment.Create(apiContext, new Payment
+        URL.return_url = "http://" + HttpContext.Current.Request.Url.Authority + "/CompletePurchase.aspx"; ;
+
+        var pay = Payment.Create(apiContext, new Payment
         {
             intent = "sale",
-            payer = payer,
+            payer = customer,
             transactions = new List<Transaction> { transaction },
-            redirect_urls = redirectUrls
+            redirect_urls = URL
         });
 
-        Session["paymentId"] = payment.id;
+        Session["PaymentID"] = pay.id;
+
+        foreach (var link in pay.links)
+        {
+            if (link.rel.ToLower().Trim().Equals("approval_url"))
+                // redirect user if appropiate link is found
+                Response.Redirect("https://www.paypal.com/myaccount/money/cards/new/manual");
+        }
     }
 }
+    

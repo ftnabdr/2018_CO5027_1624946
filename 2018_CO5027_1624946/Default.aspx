@@ -6,26 +6,38 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" Runat="Server">
+        <div class="header">
+
+        <div class="topnav">
+            <a href="Default.aspx">Home</a>
+            <a href="Product.aspx">Product</a>
+            <a href="Contact.aspx">Contact Us</a>
+            <a href="SignReg.aspx">Login</a>
+            <a href="Checkout.aspx"><asp:Image ID="Img" runat="server" src="../ProductImages/cart.png" alt="Checkout" width="20"/></a>
+        </div>
+
+            <h1>Classic Art Paintings</h1>
+            <p class="a">"A picture is a poem without words - Horace"</p>
+        </div>
     <form id="form1" runat="server">
-    <p>Product List:
+    <h3>Product List:</h3>
 
         <asp:Repeater ID="ProductList" runat="server" DataSourceID="SqlDataSource1">
             <HeaderTemplate></HeaderTemplate>
             <ItemTemplate> 
-                
-                <li>
-                    <img src="/CO5027/ProductImages/<%#Eval("ProductID") %>.jpg" width="200" height="200"/> 
-                </li>
-
+               <ul> 
+                  <li>
+                    <p><asp:Image ID="Img" runat="server" alt="image" width="300" ImageUrl='<%#"~/Images/" + Eval("ProductID")+ ".jpg"%>'/></p>
+                    <p><b>Name:</b><a href="<%#Eval("ProductID","Product.aspx?Id={0}") %>"><%#Eval("ProductName") %></a></p>
+                    <p><b>Price:<%#Eval("ProductPrice") %></b></p>
+                  </li>
+                </ul>
             </ItemTemplate>
-            <FooterTemplate></FooterTemplate>
+            <FooterTemplate>
+            </FooterTemplate>
         </asp:Repeater>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IdentityConnectionString %>" SelectCommand="SELECT [ProductID], [ProductName], [ProductDesc] FROM [tblProduct] WHERE ([Quantity] &gt; @Quantity)">
-            <SelectParameters>
-                <asp:QueryStringParameter Name="Quantity" QueryStringField="0" Type="Int32" />
-            </SelectParameters>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IdentityConnectionString %>" SelectCommand="SELECT [ProductID], [ProductName], [ProductPrice] FROM [tblProduct]">
         </asp:SqlDataSource>
-    </p>
     </form>
 </asp:Content>
 

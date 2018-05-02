@@ -5,6 +5,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" Runat="Server">
+        <div class="header">
+
+        <div class="topnav">
+            <a href="Default.aspx">Home</a>
+            <a href="Product.aspx">Product</a>
+            <a href="Contact.aspx">Contact Us</a>
+            <a href="SignReg.aspx">Login</a>
+            <a href="Checkout.aspx"><asp:Image ID="Img" runat="server" src="../ProductImages/cart.png" alt="Checkout" width="20"/></a>
+        </div>
+
+            <h1>Classic Art Paintings</h1>
+            <p class="a">"A picture is a poem without words - Horace"</p>
+        </div>
     <form id="form1" runat="server">
     <asp:FormView ID="FormView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="ProductID" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Vertical">
         <EditItemTemplate>
@@ -27,6 +40,7 @@
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
         <InsertItemTemplate>
+            <asp:Image ID="Img" runat="server" width="300" ImageUrl='<%#"~/Images/" + Eval("ProductID")+ ".jpg"%>'/>
             ProductID:
             <asp:TextBox ID="ProductIDTextBox" runat="server" Text='<%# Bind("ProductID") %>' />
             <br />
@@ -70,6 +84,7 @@
     </asp:DropDownList>
     <br />
     <asp:Button ID="btnPurchase" runat="server" OnClick="btnPurchase_Click" Text="Buy Now" />
+
 </form>
 </asp:Content>
 

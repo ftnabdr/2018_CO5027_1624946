@@ -12,24 +12,14 @@
     <link href="css/Styles.css" rel="stylesheet" />
 </head>
 <body>
-        <div class="header">
-
-        <div class="topnav">
-            <a href="Default.aspx">Home</a>
-            <a href="Product.aspx">Product</a>
-            <a href="Contact.aspx">Contact Us</a>
-            <a href="SignReg.aspx">Login</a>
-            <a href="Checkout.aspx"><img src="ProductImages/cart.png" width="20"></a>
-        </div>
-
-            <h1>Classic Art Paintings</h1>
-            <p class="a">"A picture is a poem without words - Horace"</p>
-        </div>
-       
-    <div>
         <asp:ContentPlaceHolder id="contentBody" runat="server">
         
         </asp:ContentPlaceHolder>
-    </div>
+        <div class="footer">
+            footer content
+            <a href="http://validator.w3.org/check?uri=referer">Validate HTML</a> |
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a> |
+            <a href="Admin/">Admin</a>
+        </div>
 </body>
 </html>
