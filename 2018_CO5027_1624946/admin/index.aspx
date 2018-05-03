@@ -19,13 +19,9 @@
         </div>
 
     <form id="form1" runat="server">
-    <h2>Default Page</h2>
-
-    <a href="List.aspx">List of Products</a>
+    <h3>Welcome to Admin Page</h3>
     <br />
-    <a href="Add.aspx">Add Products</a>
-        <br />
-        <asp:Button ID="LogoutButton" runat="server" OnClick="LogoutButton_Click" Text="Log Out" />
+        <h3><asp:Button ID="LogoutButton" runat="server" OnClick="LogoutButton_Click" Text="Log Out" /></h3>
     <br />
 
     </form>

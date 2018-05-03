@@ -13,7 +13,6 @@
             <a href="Product.aspx">Product</a>
             <a href="Contact.aspx">Contact Us</a>
             <a href="SignReg.aspx">Login</a>
-            <a href="Checkout.aspx"><asp:Image ID="Img" runat="server" src="../ProductImages/cart.png" alt="Checkout" width="20"/></a>
         </div>
 
             <h1>Classic Art Paintings</h1>
@@ -27,9 +26,9 @@
             <ItemTemplate> 
                <ul> 
                   <li>
-                    <p><asp:Image ID="Img" runat="server" alt="image" width="300" ImageUrl='<%#"~/Images/" + Eval("ProductID")+ ".jpg"%>'/></p>
-                    <p><b>Name:</b><a href="<%#Eval("ProductID","Product.aspx?Id={0}") %>"><%#Eval("ProductName") %></a></p>
-                    <p><b>Price:<%#Eval("ProductPrice") %></b></p>
+                    <p><asp:Image ID="Img" runat="server" alt="image" width="350" ImageUrl='<%#"~/Images/" + Eval("ProductID")+ ".jpg"%>'/></p>
+                    <p><b>Name: </b><a href="<%#Eval("ProductID","Product.aspx?ProductID={0}") %>"><%#Eval("ProductName") %></a></p>
+                    <p><b>Price: <%#Eval("ProductPrice") %></b></p>
                   </li>
                 </ul>
             </ItemTemplate>

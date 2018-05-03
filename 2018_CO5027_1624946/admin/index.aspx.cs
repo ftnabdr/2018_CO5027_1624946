@@ -14,7 +14,9 @@ public partial class admin_index : System.Web.UI.Page
 
     protected void LogoutButton_Click(object sender, EventArgs e)
     {
+        // code adapted from (Gund, 2013)
         Session.Clear();
         Response.Redirect("~/SignReg.aspx");
+        // end of code adapted
     }
 }

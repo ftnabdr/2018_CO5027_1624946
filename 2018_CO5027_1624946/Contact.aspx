@@ -13,7 +13,6 @@
             <a href="Product.aspx">Product</a>
             <a href="Contact.aspx">Contact Us</a>
             <a href="SignReg.aspx">Login</a>
-            <a href="Checkout.aspx"><asp:Image ID="Img" runat="server" src="../ProductImages/cart.png" alt="Checkout" width="20"/></a>
         </div>
 
             <h1>Classic Art Paintings</h1>
@@ -21,8 +20,9 @@
         </div>
 
         <form id="form1" runat="server">
+            <div class="container">
             
-            <asp:ValidationSummary ID="valSummary" runat="server" ForeColor="Red" />
+            <asp:ValidationSummary ID="valSummary" runat="server" ForeColor="Red" Height="103px" Width="222px" />
             
             <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
             <br />
@@ -45,15 +45,22 @@
             <br />
             Message:</label>
             <br />
-            <asp:TextBox ID="txtBody" runat="server" name="subject" placeholder="Write something.." style="height:200px"></asp:TextBox>
+            <asp:TextBox ID="txtBody" runat="server" name="subject" placeholder="Write something.." Width="183px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqMessage" runat="server" ErrorMessage="Please fill in the body" ControlToValidate="txtEmail" Display="None" ForeColor="Red"></asp:RequiredFieldValidator>
 
             <br />
             <br />
 
-            <asp:Button ID="btnSend" runat="server" OnClick="btnSend_Click" Text="Submit" />                    
+            <asp:Button ID="btnSend" runat="server" OnClick="btnSend_Click" Text="Submit" />  
+
+            </div>                  
         </form>
              <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+
+    <h3>Static Map</h3>
+    <h3><asp:Image ID="Image1" runat="server" src="ProductImages/map.PNG" alt="Static Map"/></h3>
+    
+    
 
 
     <div id="map"></div>

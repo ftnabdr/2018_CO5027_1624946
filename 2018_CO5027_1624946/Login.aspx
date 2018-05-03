@@ -12,7 +12,6 @@
             <a href="Product.aspx">Product</a>
             <a href="Contact.aspx">Contact Us</a>
             <a href="SignReg.aspx">Login</a>
-            <a href="Checkout.aspx"><asp:Image ID="Img" runat="server" src="../ProductImages/cart.png" alt="Checkout" width="20"/></a>
         </div>
 
             <h1>Classic Art Paintings</h1>
